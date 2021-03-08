@@ -26,12 +26,18 @@ public class livrojogo1 {
 		int kmRestante;
 		int numeroEnvelope;
 		String errobug;
+		int ferramenta;
+		int anoNascimento;
+		int senhaPremio;
+		int aleatorio;
 		
 		
 		System.out.println("Bem vindo ao jogo Magiver: O Retorno!");
+		System.out.println("Como o Magiver está cumprindo quarentena essa missão é para você");
 		System.out.println("Qual seu nome?");
-		
 		nomeJogador = leitor.next();
+		System.out.println("Qual o ano do seu nascimento?");
+		anoNascimento = leitor.nextInt();
 				
 		System.out.println(nomeJogador + "! Você está pronto para começar?");
 		
@@ -81,8 +87,8 @@ public class livrojogo1 {
 				dinheiro = 125;
 			}
 			else {
-				System.out.println("Você terá que acertar a combinação correta para abrir essa mala, Essa mala pertence ao Chapolin e ele sempre escolhe senhas com 3 numeros iguais");
-				
+				System.out.println("Você terá que acertar a combinação correta para abrir essa mala");
+				System.out.println("Essa mala pertence ao Chapolin e ele sempre escolhe senhas com 3 numeros iguais");
 				tentativaSenha=leitor.nextInt();
 				while (tentativaSenha!= senhaMala)
 				{
@@ -148,34 +154,34 @@ public class livrojogo1 {
 										
 						
 					System.out.println(novoNome +  " Se o número sorteado no dado for par você continua no Jogo, se for impar o jogo acabou de uma vez para você.");
-					
-					switch(gerador.nextInt(6)) {
+					aleatorio=gerador.nextInt(6);
+					switch(aleatorio) {
 					case 1:
-						System.out.println("numero sorteado ="+ gerador);
+						System.out.println("numero sorteado ="+ aleatorio);
 						System.out.println("Game Over!");
 						
 						break;
 					case 2:
-						System.out.println("numero sorteado ="+ gerador);
+						System.out.println("numero sorteado ="+ aleatorio);
 						System.out.println("Parabéns Vamos continuar!");
 						faseJogo=2;
 						break;
 					case 3:
-						System.out.println("numero sorteado ="+ gerador);
+						System.out.println("numero sorteado ="+ aleatorio);
 						System.out.println("Game Over!");
 						break;
 					case 4:
-						System.out.println("numero sorteado ="+ gerador);
+						System.out.println("numero sorteado ="+ aleatorio);
 						System.out.println("Parabéns Vamos continuar!");
 						faseJogo=2;
 						break;
 					case 5:
-						System.out.println("numero sorteado ="+ gerador);
+						System.out.println("numero sorteado ="+ aleatorio);
 						System.out.println("Game Over!");
 						break;
 											
 					case 0:
-						System.out.println("numero sorteado ="+ gerador);
+						System.out.println("numero sorteado ="+ aleatorio);
 						System.out.println("Parabéns Vamos continuar!");
 						faseJogo=2;
 					}
@@ -213,7 +219,7 @@ public class livrojogo1 {
 		}
 			novoNome.equals(novoNome);
 			
-		    System.out.println("Muito bom" + novoNome + "!  Vamos iniciar sua Segunda Missão!");
+		    System.out.println("Muito bom  " +  novoNome  +  " !  Vamos iniciar sua Segunda Missão!");
 			
 			System.out.println("Seu nome agora é:" + novoNome);
 			System.out.println("Seu carro  é:" + meioTransporte);
@@ -253,28 +259,69 @@ public class livrojogo1 {
 		
 		if (kmRestante>distancia) {
 			
-			System.out.println(novoNome + " Voce pode usar seu carro!");
+			System.out.println(novoNome  +  "  Você pode usar seu carro!");
 		}
 		else {
-			System.out.println(novoNome + " Voce agora vai a pé gasolina está muito cara!");
+			System.out.println(novoNome  +  "  Você agora vai a pé gasolina está muito cara!");
 			}
 			
+		System.out.println("Escolha sua ferramenta!");
+		System.out.println("digite 1 , 2 ou 3 ");
+		ferramenta = leitor.nextInt();
+		// escolha da ferramenta para segunda missão//
+		
+		switch(ferramenta) {
+		case 1:
+			System.out.println("Você escolheu a ferramenta número 1");
+			System.out.println("Cascas de banana! como você não é o Magiver não vai conseguir fazer muita coisa");
+			System.out.println("Você PE"
+					+ "Perdeu Game Over!");
+			break;
+		case 2:
+			System.out.println("Você escolheu a ferramenta número 2");
+			System.out.println("Maleta completa do Patolino");
+			System.out.println("Eu sei que não é da sua época, mas vai por mim ela funciona!");
+			System.out.println("aperte qualquer tecla para continuar");
+			errobug = leitor.next();
+			System.out.println("Parabéns! missão cumprida!");
 			
+			
+			// se o ano de Nascimento estiver correto o jogo sorteia um prêmio caso negativo apenas encerra o jogo// 
+			System.out.println("Revele o ano do seu nascimento para pegar seu Prêmio:");
+			System.out.println("Qual o ano do seu nascimento?");
+			senhaPremio = leitor.nextInt();
+			
+			if(anoNascimento==senhaPremio) {
+			
+			switch(gerador.nextInt(3)) {
+			case 0:
+				
+				System.out.println("Você Ganhou um Curso novo de Java!");
+				System.out.println("Parabéns Missão Cumprida!");
+				
+				break;
+			case 1:
+				
+				System.out.println("Você Ganhou um computador novo 486 com monitor monocromático de 14 polegadas!");
+				System.out.println("Parabéns Missão Cumprida!");
+				break;
+			case 2:
+				System.out.println("Voce Ganhou um Macbook Pro");
+				System.out.println("Parabéns Missão Cumprida!");
+				break;
+						
+			default:
+				System.out.println("Opção Inválida");
+								}
 		
 			
+			}else {
+				System.out.println("Não é você! Sai daqui impostor");
+				System.out.println("Você cumpriu sua missão mas não vai ganhar nada!");
+				
+			}
 			
-			
-			
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		}
 		
 	}
 
