@@ -5,10 +5,11 @@ import java.util.Scanner;
 import java.util.Random;
 public class livrojogo1 {
 	
-	static Random gerador = new Random();
-	static Scanner leitor = new Scanner(System.in);
-	
+		
 	public static void main(String[] args) {
+		
+		Random gerador = new Random();
+		Scanner leitor = new Scanner(System.in);
 		
 		String nomeJogador;
 		int escolha;
